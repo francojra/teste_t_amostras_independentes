@@ -20,7 +20,45 @@
 
 # Premissas do teste t ---------------------------------------------------------------------------------------------------------------------
 
-### As amostras devem ser independentes
-### As unidades amostrais são selecionadas aleatoriamente
-### Distribuição normal (gaussiana) dos resíduos
-### Homogeneidade da variância
+### As amostras devem ser independentes;
+### As unidades amostrais são selecionadas aleatoriamente;
+### Distribuição normal (gaussiana) dos resíduos;
+### Homogeneidade da variância.
+
+# Avaliaçao das premissas ------------------------------------------------------------------------------------------------------------------
+
+### Inspeção gráfica da distribuição dos resíduos:
+
+###  premissa de homogeneidade da variância pode ser avaliada através do gráfico de 
+### dispersão dos resíduos (eixo X) pelos valores preditos da variável resposta (eixo Y) 
+### (Figura 7.1A). A distribuição dos resíduos será homogênea se não observarmos nenhum 
+### padrão na distribuição dos pontos (i.e. forma em V, U ou funil).
+
+### A premissa de normalidade dos resíduos pode ser avaliada através do gráfico de 
+### quantis-quantis (QQ-plots). A distribuição dos resíduos será normal se os pontos 
+### estiverem próximos à reta (Figura 7.1B).
+
+# Exemplo prático 1 - Teste T para duas amostras com variâncias iguais ---------------------------------------------------------------------
+
+### Explicação dos dados
+
+### Neste exemplo, avaliaremos o comprimento rostro-cloacal (CRC em milímetros) de machos 
+### de Physalaemus nattereri (Anura:Leptodactylidae) amostrados em diferentes estações 
+### do ano com armadilhas de interceptação e queda na Região Noroeste do Estado de São 
+### Paulo (da Silva and Rossa-Feres 2010).
+
+### Pacotes necessários
+
+library(ecodados)
+library(car)
+library(ggpubr)
+library(ggforce)
+library(lsmeans) 
+library(lmtest)
+library(sjPlot)
+library(nlme)
+library(ape)
+library(fields) 
+library(tidyverse)
+library(vegan)
+library(rdist)
