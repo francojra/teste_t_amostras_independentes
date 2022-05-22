@@ -144,3 +144,29 @@ leveneTest(CRC ~ as.factor(Estacao), data = CRC_PN_macho)
 ### Teste t para amostras independentes
 
 t.test(CRC ~ Estacao, data = CRC_PN_macho, var.equal = TRUE)
+
+## Quatro valores devem ser apresentados aos leitores: i) estatística do teste - 
+## representada por t = 4,15, ii) valor de significância - representado por 
+## p-value = 0,0001, iii) graus de liberdade - representado por df = 49, e iv) 
+## diferença entre as médias.
+
+### Gráfico
+
+ggplot(data = CRC_PN_macho, aes(x = Estacao, y = CRC, color = Estacao)) + 
+    labs(x = "Estações", 
+         y = expression(paste("CRC (mm) - ", italic("P. nattereri")))) +
+    geom_boxplot(fill = c("darkorange", "cyan4"), color = "black", 
+                 outlier.shape = NA) +
+    geom_jitter(shape = 16, position = position_jitter(0.1), 
+                cex = 5, alpha = 0.7) +
+    scale_color_manual(values = c("black", "black")) +
+    theme_bw() +
+    theme(legend.position = "none")
+
+# Interpretação dos resultados -------------------------------------------------------------------------------------------------------------
+
+### Neste exemplo, rejeitamos a hipótese nula de que as médias do CRC dos machos entre as 
+### estações seca e chuvosa são iguais. Os resultados mostram que os machos de P. nattereri
+### coletados na estação chuvosa foram em média 0,43 mm maiores do que os machos coletados 
+### na estação seca (t49 = 4,15, P < 0,001).
+
