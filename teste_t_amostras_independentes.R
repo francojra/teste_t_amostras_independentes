@@ -102,7 +102,6 @@ data("mite.env")
 ## Verificar se o seu data frame está com as unidades amostrais nas linhas e variáveis 
 ## preditoras e respostas nas colunas.
 
-
 # Análises ---------------------------------------------------------------------------------------------------------------------------------
 
 ### Verificando os dados
